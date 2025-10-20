@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AWSWAFLoggingPermissions",
+      "Effect": "Allow",
+      "Principal": { "Service": "waf.amazonaws.com" },
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:us-east-1:626635400294:log-group:aws-waf-logs-SensitiveDataBlocker*"
+    }
+  ]
+}

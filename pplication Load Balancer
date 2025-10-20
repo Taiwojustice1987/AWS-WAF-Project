@@ -1,0 +1,8 @@
+aws elbv2 create-load-balancer \
+  --name TestWAFALB \
+  --subnets subnet-0c83664332adaf0f1 subnet-0707e79625c05f136 \
+  --security-groups sg-0113856b2a44cf21e \
+  --scheme internet-facing \
+  --type application \
+  --region us-east-1 \
+  --profile CENTRAL_AWS_PROFILE

@@ -1,0 +1,60 @@
+{
+    "Name": "SensitiveDataBlocker",
+    "Scope": "REGIONAL",
+    "DefaultAction": { "Allow": {} },
+    "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "SensitiveDataBlocker"
+    },
+    "Rules": [
+        {
+            "Name": "AWS-AWSManagedRulesCommonRuleSet",
+            "Priority": 1,
+            "Statement": {
+                "ManagedRuleGroupStatement": {
+                    "VendorName": "AWS",
+                    "Name": "AWSManagedRulesCommonRuleSet"
+                }
+            },
+            "OverrideAction": { "None": {} },
+            "VisibilityConfig": {
+                "SampledRequestsEnabled": true,
+                "CloudWatchMetricsEnabled": true,
+                "MetricName": "CommonRuleSet"
+            }
+        },
+        {
+            "Name": "AWS-AWSManagedRulesSQLiRuleSet",
+            "Priority": 2,
+            "Statement": {
+                "ManagedRuleGroupStatement": {
+                    "VendorName": "AWS",
+                    "Name": "AWSManagedRulesSQLiRuleSet"
+                }
+            },
+            "OverrideAction": { "None": {} },
+            "VisibilityConfig": {
+                "SampledRequestsEnabled": true,
+                "CloudWatchMetricsEnabled": true,
+                "MetricName": "SQLiRuleSet"
+            }
+        },
+        {
+            "Name": "AWS-AWSManagedRulesAmazonIpReputationList",
+            "Priority": 3,
+            "Statement": {
+                "ManagedRuleGroupStatement": {
+                    "VendorName": "AWS",
+                    "Name": "AWSManagedRulesAmazonIpReputationList"
+                }
+            },
+            "OverrideAction": { "None": {} },
+            "VisibilityConfig": {
+                "SampledRequestsEnabled": true,
+                "CloudWatchMetricsEnabled": true,
+                "MetricName": "IPReputation"
+            }
+        }
+    ]
+}

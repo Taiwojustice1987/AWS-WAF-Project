@@ -1,0 +1,7 @@
+aws elbv2 create-listener \
+  --load-balancer-arn arn:aws:elasticloadbalancing:us-east-1:626635400294:loadbalancer/app/TestWAFALB/03c4df48e873e5d7 \
+  --protocol HTTP \
+  --port 80 \
+  --default-actions Type=forward,TargetGroupArn=arn:aws:elasticloadbalancing:us-east-1:626635400294:targetgroup/test-targets/45667d41d5e56260 \
+  --region us-east-1 \
+  --profile CENTRAL_AWS_PROFILE
